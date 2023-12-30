@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reliable Quick Disconnect Couplings | SOMECOMPANY</title>
+    <title>Reliable Quick Disconnect Couplings | SanRo-1</title>
     <meta name="description"
-        content="Explore reliable quick disconnect couplings from SOMECOMPANY, a leading Indian manufacturer. Trusted solutions for diverse applications.">
+        content="Explore reliable quick disconnect couplings from SanRo-1, a leading Indian manufacturer. Trusted solutions for diverse applications.">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
         crossorigin="anonymous">
     <script src="script.js"></script>
@@ -15,17 +15,17 @@
     <link rel="canonical" href="https://www.yourwebsite.com/">
 
     <!-- Open Graph Meta Tags (for Facebook, LinkedIn, etc.) -->
-    <meta property="og:title" content="Reliable Quick Disconnect Couplings | SOMECOMPANY">
+    <meta property="og:title" content="Reliable Quick Disconnect Couplings | SanRo-1">
     <meta property="og:description"
-        content="Explore reliable quick disconnect couplings from SOMECOMPANY, a leading Indian manufacturer. Trusted solutions for diverse applications.">
+        content="Explore reliable quick disconnect couplings from SanRo-1, a leading Indian manufacturer. Trusted solutions for diverse applications.">
     <meta property="og:image" content="URL_TO_YOUR_SOCIAL_SHARE_IMAGE">
     <meta property="og:url" content="https://www.yourwebsite.com/">
 
     <!-- Twitter Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Reliable Quick Disconnect Couplings | SOMECOMPANY">
+    <meta name="twitter:title" content="Reliable Quick Disconnect Couplings | SanRo-1">
     <meta name="twitter:description"
-        content="Explore reliable quick disconnect couplings from SOMECOMPANY, a leading Indian manufacturer. Trusted solutions for diverse applications.">
+        content="Explore reliable quick disconnect couplings from SanRo-1, a leading Indian manufacturer. Trusted solutions for diverse applications.">
     <meta name="twitter:image" content="URL_TO_YOUR_SOCIAL_SHARE_IMAGE">
 
     <style>
@@ -258,6 +258,11 @@
                 font-size: 0.8em;
             }
         }
+
+        .img-fluid{
+            max-width: 15%
+        }
+        
     </style>
 </head>
 
@@ -266,7 +271,7 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-md-6">
-                    <img src="https://dummyimage.com/100x100/000000/fff" alt="SOMECOMPANY Logo" class="img-fluid"
+                    <img src="web-icon.jpg" alt="SanRo-1 Logo" class="img-fluid"
                         style="max-width: 15%; height: auto;">
                 </div>
                 <div class="col-md-6 text-md-right mt-3 mt-md-0">
@@ -280,7 +285,7 @@
     <section class="hero-section text-dark" style="background-color: #ffffff;">
         <div class="container text-center">
             <img src="https://dummyimage.com/900x400/000000/fff"
-                alt="SOMECOMPANY Quick Disconnect Couplings - Reliable and Versatile" class="img-fluid">
+                alt="SanRo-1 Quick Disconnect Couplings - Reliable and Versatile" class="img-fluid">
             <div class="hero-text position-absolute top-50 start-50 translate-middle text-center">
                 <h1 class="display-4">Reliable Quick Disconnect Couplings</h1>
                 <p class="lead">Your trusted Indian manufacturer for diverse applications.</p>
@@ -338,7 +343,7 @@
                         <textarea id="message" name="message" class="form-control" placeholder="Your Message"
                             required></textarea>
 
-                        <button type="submit" class="btn btn-success mt-3">Submit</button>
+                        <button type="submit" onclick="sendValues()" class="btn btn-success mt-3">Submit</button>
                     </form>
                 </div>
             </div>
@@ -349,10 +354,10 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-md-6">
-                    <img src="https://dummyimage.com/100x100/000000/fff" alt="SOMECOMPANY Logo" class="img-fluid">
+                    <img src="web-icon.jpg" alt="SanRo-1 Logo" class="img-fluid">
                 </div>
                 <div class="col-md-6 text-center text-md-right">
-                    <p>&copy; 2023 SOMECOMPANY. All Rights Reserved.</p>
+                    <p>&copy; 2023 SanRo-1. All Rights Reserved.</p>
                 </div>
             </div>
         </div>
@@ -459,12 +464,27 @@
                     <div class="card-text">End Fittings: ${product.endFittings.join(', ')}</div>
                     <div class="card-text">Working Pressure: ${product.workingPressure}</div>
                     <div class="card-text">Pricing: <strong>$${product.pricing}</strong></div>
-                    <a href="#" class="card-button"> Enquire</a> 
+                    <a href="#" onClick="sendMessage('${product.name}')" class="card-button"> Enquire</a> 
                 </div>
                 </a>
             </div>`;
             productContainer.innerHTML += productCardHTML;
          });
+        }
+
+        function sendValues(){
+
+            var message = $('#name').val() + ", " +  $('#email').val() + + ", " +  $('#message').val()
+
+            var x = "https://wa.me/9844200849?text=Quick Query--" + message;
+
+            window.location.href = x;
+        }
+
+        function sendMessage(prodName){
+            var x = "https://wa.me/9844200849?text=Product Enquiry--" + prodName;
+
+            window.location.href = x;
         }
     </script>
 </body>

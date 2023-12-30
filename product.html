@@ -25,7 +25,8 @@
     <!-- Dynamic SEO Keywords -->
     <meta name="keywords" content="" id="seoKeywords">
 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        crossorigin="anonymous">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <script src="script.js"></script>
     <style>
@@ -59,9 +60,11 @@
 
         .carousel-inner img {
             max-width: 600px;
-    max-height: 400px; /* Adjust the value based on your preference */
-    margin: auto; /* Center the image horizontally */
-}
+            max-height: 400px;
+            /* Adjust the value based on your preference */
+            margin: auto;
+            /* Center the image horizontally */
+        }
 
         /* Adjustments for responsiveness */
         @media (max-width: 768px) {
@@ -73,6 +76,10 @@
                 padding: 15px;
             }
         }
+
+        .img-fluid {
+            max-width: 15%
+        }
     </style>
 </head>
 
@@ -81,8 +88,7 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-md-6">
-                    <img src="https://dummyimage.com/100x100/000000/fff" alt="SOMECOMPANY Logo" class="img-fluid"
-                        style="max-width: 15%; height: auto;">
+                    <img src="web-icon.jpg" alt="SanRo-1 Logo" class="img-fluid" style="max-width: 15%; height: auto;">
                 </div>
                 <div class="col-md-6 text-md-right mt-3 mt-md-0">
                     <a href="#" class="btn btn-success" data-toggle="modal" data-target="#inquiry-form">Contact Us for
@@ -157,7 +163,7 @@
                         <textarea id="message" name="message" class="form-control" placeholder="Your Message"
                             required></textarea>
 
-                        <button type="submit" class="btn btn-success mt-3">Submit</button>
+                        <button type="submit" onclick="sendValues()" class="btn btn-success mt-3">Submit</button>
                     </form>
                 </div>
             </div>
@@ -168,18 +174,20 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-md-6">
-                    <img src="https://dummyimage.com/100x100/000000/fff" alt="SOMECOMPANY Logo" class="img-fluid">
+                    <img src="web-icon.jpg" alt="SanRo-1 Logo" class="img-fluid">
                 </div>
                 <div class="col-md-6 text-center text-md-right">
-                    <p>&copy; 2023 SOMECOMPANY. All Rights Reserved.</p>
+                    <p>&copy; 2023 SanRo-1. All Rights Reserved.</p>
                 </div>
             </div>
         </div>
     </footer>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js" crossorigin="anonymous">
+    </script>
 
     <script>
         const urlParams = new URLSearchParams(window.location.search);
@@ -206,7 +214,8 @@
         document.getElementById('productSubtitle').textContent = product.category;
         document.getElementById('productDescription').textContent = product.description;
         document.getElementById('productPrice').textContent = product.pricing;
-        document.getElementById('productHighlights').innerHTML = product.features.map(h => `<li><i class="fa fa-check text-success"></i>${h}</li>`).join('');
+        document.getElementById('productHighlights').innerHTML = product.features.map(h =>
+            `<li><i class="fa fa-check text-success"></i>${h}</li>`).join('');
         document.getElementById('productInfo').innerHTML = `
             <tr><td width="390">Series</td><td>${product.series}</td></tr>
             <tr><td>Size</td><td>${product.size}</td></tr>
@@ -216,6 +225,15 @@
             <tr><td>End Fittings</td><td>${product.endFittings.join(', ')}</td></tr>
             <tr><td>Working Pressure</td><td>${product.workingPressure}</td></tr>
         `;
+
+        function sendValues() {
+
+            var message = $('#name').val() + ", " + $('#email').val() + +", " + $('#message').val()
+
+            var x = "https://wa.me/9844200849?text=Quick Query--" + message;
+
+            window.location.href = x;
+        }
     </script>
 </body>
 

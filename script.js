@@ -7,7 +7,7 @@ var productData = {
             "features": ["Perfect finish", "Industry proven designs", "Longer life", "Optimum quality"],
             "application": "Perfect finish, Industry proven designs, Longer life, Optimum quality",
             "seo_keywords": ["Perfect finish, Industry proven designs, Longer life, Optimum quality"],
-            "pricing": 100,
+            "pricing": 300,
             "series": "STRAIGHT THROUGH (ST10)",
             "size": "1/4” - 3”",
             "material": ["C.S", "Brass", "SS 304", "SS 316"],
