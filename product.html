@@ -226,14 +226,15 @@
             <tr><td>Working Pressure</td><td>${product.workingPressure}</td></tr>
         `;
 
-        function sendValues() {
+        function sendValues(){
 
-            var message = $('#name').val() + ", " + $('#email').val() + +", " + $('#message').val()
+var message = $('#name').val() + ", " +  $('#email').val() + + ", " +  $('#message').val()
 
-            var x = "https://wa.me/9844200849?text=Quick Query--" + message;
+var x = "https://wa.me/9844200849?text=Quick Query--" + message;
 
-            window.location.href = x;
-        }
+//window.location.href = x;
+window.open(x, '_blank');
+}
     </script>
 </body>
 
